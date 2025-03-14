@@ -64,3 +64,4 @@ def ejercicio_2(request):
         {'nombre': 'Juan', 'email': 'juan@gmail.com'},
         {'nombre': 'Pedro', 'email': 'pedro@gmail.com'},
     ]
+    return render(request, 'principal/ejercicio2.html', {'usuarios': usuarios})

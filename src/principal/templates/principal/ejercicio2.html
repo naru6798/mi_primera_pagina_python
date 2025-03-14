@@ -9,10 +9,19 @@
     <h1>Ejercicio 2</h1>
     <h3>Datos de usuario</h3>
     {% for usuario in usuarios %}
-        {% for clave in usuario.items %}
+        {% for clave, valor in usuario.items %}
             <p>{{ clave | title }}: {{valor}}</p>
         {% endfor %}
+        <br>
     {% endfor %}
+
+    <!--
+    .items: 
+    Te permite recorrer las claves y valores de un diccionario.
+    
+    | title: 
+    Transforma el texto a formato de título (pone en mayúscula la primera letra de cada palabra).
+    -->
 
 </body>
 </html>
