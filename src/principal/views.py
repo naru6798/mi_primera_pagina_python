@@ -21,9 +21,9 @@ def index(request):
 
 def tirar_dado(request):
     from datetime import datetime
-    from random import randit
+    from random import randint
 
-    tiro_de_dado = randit(1, 6)
+    tiro_de_dado = randint(1, 6)
 
     if tiro_de_dado == 6:
         mensaje = f'Has tirado el 🎲 y has sacado ¡{tiro_de_dado}! 😀 ✨ Ganaste ✨'
@@ -36,5 +36,24 @@ def tirar_dado(request):
         'fecha': datetime.now().strftime('%H:%M:%S.%f'),
     }
 
-    return render(request, 'principal/tirar-dado.html', context = datos)
+    return render(request, 'principal/dados.html', context = datos)
 
+
+def ejercicio1(request):
+    nombre = "Naren"
+    apellido = "Mirabel"
+
+    datos = {
+        'nombre': nombre,
+        'apellido': apellido,
+    }
+
+    return render(request, 'principal/ejercicio1.html', context = datos)
+
+def ver_notas(request):
+    from random import randint
+    lista_notas = []
+    while len(lista_notas) < 26:
+        lista_notas.append(randint(1, 10))
+
+    return render (request, 'principal/notas.html', {'notas': lista_notas})
