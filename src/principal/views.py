@@ -57,3 +57,10 @@ def ver_notas(request):
         lista_notas.append(randint(1, 10))
 
     return render (request, 'principal/notas.html', {'notas': lista_notas})
+
+def ejercicio_2(request):
+    usuarios = [
+        {'nombre': 'Naren', 'email': 'narenmirabel@gmail.com'},
+        {'nombre': 'Juan', 'email': 'juan@gmail.com'},
+        {'nombre': 'Pedro', 'email': 'pedro@gmail.com'},
+    ]
