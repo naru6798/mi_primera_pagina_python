@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Cliente
 
 def saludar(request):
     return HttpResponse("Hola desde Django!")
@@ -65,3 +66,7 @@ def ejercicio_2(request):
         {'nombre': 'Pedro', 'email': 'pedro@gmail.com'},
     ]
     return render(request, 'principal/ejercicio2.html', {'usuarios': usuarios})
+
+def clientes_list(request):
+    clientes = Cliente.objects.all()
+    return render(request, 'principal/clientes_list.html', {'clientes': clientes})

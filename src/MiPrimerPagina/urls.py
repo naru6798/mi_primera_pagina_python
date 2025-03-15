@@ -29,4 +29,5 @@ urlpatterns = [
     path('ejercicio1/', views.ejercicio1),
     path('notas/', views.ver_notas),
     path('ejercicio2/', views.ejercicio_2),
+    path('clientes/', views.clientes_list),
 ]
