@@ -6,14 +6,18 @@
     <title>Notas</title>
 </head>
 <body>
-    <h1>Notas</h1>
-    {% for nota in notas %}
-        {% if nota >= 7 %}
-            <p style="color:green;">Aprobado: {{ nota }}</p>
-        {% else %}
-            <p style="color:red;">Desaprobado: {{ nota }}</p>
-        {% endif %}
-    {% endfor %}
+    <h1 style="text-align: center;">Notas</h1>
+    <div style="font-size: larger;
+        color: deepskyblue;
+        text-align: center;">
+        {% for nota in notas %}
+            {% if nota >= 7 %}
+                <p style="color:green;">Aprobado: {{ nota }}</p>
+            {% else %}
+                <p style="color:red;">Desaprobado: {{ nota }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
     <br>
     <p>Las notas son: {{ notas }}</p>
 </body>
