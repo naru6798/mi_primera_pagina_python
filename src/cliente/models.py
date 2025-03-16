@@ -14,4 +14,4 @@ class Cliente(models.Model):
     pais_origen = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True)
     
     def __str__(self) -> str:
-        return f'{self.nombre} {self.apellido}' 
+        return f'{self.apellido.upper()}, {self.nombre}' 
