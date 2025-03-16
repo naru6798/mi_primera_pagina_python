@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Caja de Pandora</title>
-</head>
-<body>
-    <h1>La Caja de Pandora</h1>
-    <ul>
-        <li>Django es un framework web.</li>
-        <li>Python es una lenguaje de programación.</li>
-        <li>HTML es el lenguaje de etiquetas para la web.</li>
-    </ul>
+{% extends 'principal/base.html' %}
 
-    <ol>
+{% block content %}
+    
+<h1>La Caja de Pandora</h1>
+<ul>
+    <li>Django es un framework web.</li>
+    <li>Python es una lenguaje de programación.</li>
+    <li>HTML es el lenguaje de etiquetas para la web.</li>
+</ul>
+
+
+    <!--<ol>
         <li><a href="saludar/">Ir a saludar</a></li>
         <li><a href="saludar2/">Ir a saludar 2</a></li>
         <li><a href="saludar3/">Ir a saludar 3</a></li>
@@ -22,8 +19,8 @@
         <li><a href="notas/">Ir a ver las notas</a></li>
         <li><a href="ejercicio2/">Ir a ejercicio 2</a></li>
         <li><a href="clientes/">Ir a lista de clientes</a></li>
-    </ol>
+    </ol> -->
     
-    <footer>Hecho en Coder en el año {{ año }}</footer>
+    {% endblock content %}
 </body>
 </html>
