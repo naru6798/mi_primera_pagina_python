@@ -1,0 +1,27 @@
+{% extends 'principal/base.html' %}
+
+{% block content %}
+    <h1>Producto: Categorías</h1>
+    <a href="{% url 'producto:categoria_form' %}">
+        <button>
+            Crear Categoría
+        </button>
+    </a>
+    <ul>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+
+            {% for categoria in categorias %}
+                <tr>
+                    <td>{{ categoria.nombre }}</td> 
+                    <td><a href="{% url 'producto:categoria_update' categoria.id %}"><button>Editar</button></a></td>  
+                </tr>
+            {% endfor %}
+        </table>
+    </ul>
+    <a href="{% url 'producto:index' %}">Volver</a>
+    
+{% endblock content %}
