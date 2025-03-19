@@ -9,4 +9,5 @@ urlpatterns = [
     path('categoria/list/', views.categoria_list, name='categoria_list'),
     path('categoria/form/', views.categoria_form, name='categoria_form'),
     path('categoria/update/<int:pk>/', views.categoria_update, name='categoria_update'),
+    path('categoria/delete/<int:pk>/', views.categoria_delete, name='categoria_delete'),
 ]

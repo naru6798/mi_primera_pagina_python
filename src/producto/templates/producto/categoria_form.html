@@ -1,8 +1,12 @@
 {% extends 'principal/base.html' %}
 
 {% block content %}
+    {% if form.instance.pk %}
+        <h1> Categoría de productos - Edición </h1>
+    {% else %}
+        <h1> Categoría de productos - Creación </h1>
+    {% endif %}
 
-    <h1> Producto: Categorias - formulario de creación</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

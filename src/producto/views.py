@@ -13,6 +13,8 @@ def categoria_list(request):
     context = {"categorias": categorias}
     return render(request, 'producto/categoria_list.html', context)
 
+# CATEGORIA - CREATEVIEW
+
 def categoria_form(request):
     if request.method == "GET":
         form = forms.CategoriaForm()
@@ -22,6 +24,8 @@ def categoria_form(request):
             form.save()
             return redirect("producto:categoria_list")
     return render(request, "producto/categoria_form.html", {"form": form})
+
+# CATEGORIA - UPDATEVIEW
 
 def categoria_update(request, pk:int):
     query = models.Categoria.objects.get(id=pk)
@@ -35,3 +39,13 @@ def categoria_update(request, pk:int):
             return redirect("producto:categoria_list")
         
     return render(request, "producto/categoria_form.html", {"form": form})
+
+
+# CATEGORIA - DELETEVIEW
+
+def categoria_delete(request, pk:int):
+    query = models.Categoria.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("producto:categoria_list")
+    return render(request, "producto/categoria_confirm_delete.html", {"object": query})

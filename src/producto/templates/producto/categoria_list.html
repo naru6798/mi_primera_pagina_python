@@ -18,7 +18,12 @@
                 <tr>
                     <td>{{ categoria.nombre }}</td> 
                     <td><a href="{% url 'producto:categoria_update' categoria.id %}"><button>Editar</button></a></td>  
+                    <td><a href="{% url 'producto:categoria_delete' categoria.id %}"><button>Borrar</button></a></td>
                 </tr>
+                {% empty %}
+                    <tr>
+                        <td>No hay categorias registradas</td>
+                    </tr>
             {% endfor %}
         </table>
     </ul>
