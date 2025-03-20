@@ -11,7 +11,11 @@ def index(request):
 # CATEGORIA - LISTVIEW
 
 def categoria_list(request):
-    categorias = models.Categoria.objects.all()
+    busqueda = request.GET.get('busqueda')
+    if busqueda:
+        categorias = models.Categoria.objects.filter(nombre__icontains=busqueda)
+    else:
+        categorias = models.Categoria.objects.all()
     context = {"categorias": categorias}
     return render(request, 'producto/categoria_list.html', context)
 
