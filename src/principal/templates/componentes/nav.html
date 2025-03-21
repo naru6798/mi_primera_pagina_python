@@ -1,7 +1,17 @@
 <nav>
     <ul>
-        <a href="{% url 'principal:index' %}">Inicio</a>
-        <li><a href="{% url 'producto:index' %}">App producto</a></li> <!--Cuidado de no dejar espacio luego del producto: -->
-        <li><a href="{% url 'principal:about' %}">About</a></li>
+        <li><a href="{% url 'principal:index' %}">Inicio</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'producto:index' %}">App producto</a></li> <!--Cuidado de no dejar espacio luego del producto: -->
+            <li><a href="{% url 'principal:about' %}">About</a></li>
+            <form action="{% url 'principal:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Cerrar sesión</button>
+            </form>
+        {% else %}
+            <li><a href="{% url 'principal:about' %}">About</a></li>
+            <li><a href="{% url 'principal:login' %}">Login</a></li>
+        {% endif %}
+
     </ul>
 </nav>

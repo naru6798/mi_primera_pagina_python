@@ -1,5 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.views import LoginView
+from .forms import LoginForm
+from django.urls import reverse_lazy
+
+class MiLoginView(LoginView):
+    template_name = 'principal/login.html'
+    authentication_form = LoginForm
+    next_page = reverse_lazy('principal:index')
+
+
 # from .models import Cliente
 
 def index(request):
